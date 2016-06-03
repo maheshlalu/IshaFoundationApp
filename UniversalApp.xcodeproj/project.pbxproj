@@ -24,6 +24,9 @@
 		120BE3A41CFD606C007A7208 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39C1CFD603F007A7208 /* Roboto-Regular.ttf */; };
 		120BE3A51CFD606C007A7208 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39D1CFD603F007A7208 /* RobotoCondensed-Bold.ttf */; };
 		120BE3A61CFD606C007A7208 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */; };
+		AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */; };
+		AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */; };
+		AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		120BE39D1CFD603F007A7208 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		120BE3A71CFD62F0007A7208 /* UniversalApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UniversalApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayoutDSL-Swift.swift"; sourceTree = "<group>"; };
+		AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXConstant.swift; sourceTree = "<group>"; };
+		AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 		120BE3611CFD4F7C007A7208 /* UniversalApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA4C56E91CFD7FA200FF3597 /* AutoLayOuts */,
 				120BE3931CFD5F61007A7208 /* assets */,
 				120BE3621CFD4F7C007A7208 /* AppDelegate.swift */,
 				120BE3641CFD4F7C007A7208 /* ViewController.swift */,
@@ -152,6 +159,8 @@
 		120BE3931CFD5F61007A7208 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				AA5C6F8E1CFEB2810089790A /* TutorialViewController */,
+				AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */,
 				120BE3961CFD602D007A7208 /* Fonts */,
 				120BE3941CFD5F78007A7208 /* FoodBody_final.pdf */,
 			);
@@ -171,6 +180,22 @@
 				120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		AA4C56E91CFD7FA200FF3597 /* AutoLayOuts */ = {
+			isa = PBXGroup;
+			children = (
+				AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */,
+			);
+			name = AutoLayOuts;
+			sourceTree = "<group>";
+		};
+		AA5C6F8E1CFEB2810089790A /* TutorialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */,
+			);
+			name = TutorialViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */,
 				120BE3651CFD4F7C007A7208 /* ViewController.swift in Sources */,
+				AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */,
+				AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */,
 				120BE3631CFD4F7C007A7208 /* AppDelegate.swift in Sources */,
 				120BE36B1CFD4F7C007A7208 /* UniversalApp.xcdatamodeld in Sources */,
 			);
@@ -547,6 +575,7 @@
 				120BE38C1CFD4F7D007A7208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		120BE38D1CFD4F7D007A7208 /* Build configuration list for PBXNativeTarget "UniversalAppTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +584,7 @@
 				120BE38F1CFD4F7D007A7208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		120BE3901CFD4F7D007A7208 /* Build configuration list for PBXNativeTarget "UniversalAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +593,7 @@
 				120BE3921CFD4F7D007A7208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
