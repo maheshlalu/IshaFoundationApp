@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController{
     
+    @IBOutlet var bottomBgView: UIView!
+    @IBOutlet var LoginBtn: UIButton!
+  
+    @IBOutlet var SignUpBtn: UIButton!
+   
     @IBOutlet weak var bgImageView: UIImageView!
     let loginBtn : UIButton = UIButton()
     let signUpBtn : UIButton = UIButton()
@@ -19,10 +24,17 @@ class ViewController: UIViewController{
      var pageControl: UIPageViewController = UIPageViewController()
     
 
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
+
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.bgImageView.image = UIImage(named: self.pageImageFile[0])
         self.setUpPageController()
-       // self.bgImageView.image = UIImage(named: self.pageImageFile[0])
 
         //self.view.backgroundColor = UIColor.blackColor()
 
@@ -31,10 +43,12 @@ class ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        //LoginViewID
     }
     
     func setUpPageController(){
         
+        let screenHt = UIScreen.mainScreen().bounds.size.height
         self.pageControl = (self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as?UIPageViewController)!
         self.pageControl.dataSource = self
         let startingViewController: LoginPageViewController = self.viewControllerAtIndex(0)
@@ -44,8 +58,9 @@ class ViewController: UIViewController{
         self.addChildViewController(self.pageControl)
         self.view.addSubview(self.pageControl.view)
         self.pageControl.didMoveToParentViewController(self)
+        self.pageControl.view.layer.borderWidth = 1
         
-        //self.pageControl.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-100)
+        self.pageControl.view.frame = CGRectMake(0, 0, self.view.frame.size.width, screenHt - self.bottomBgView.frame.size.height)
         
         //self.addContstraintToPageView()
     }
@@ -64,6 +79,23 @@ class ViewController: UIViewController{
         
     }
 
+    //MARK: ButtonActions
+    @IBAction func loginButtonAction(sender: AnyObject) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewID") as! LoginViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @IBAction func SignUpButtonAction(sender: AnyObject) {
+        //TabBarID
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewID") as! LoginViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
 
 }
 
@@ -72,7 +104,7 @@ extension ViewController:UIPageViewControllerDataSource{
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
         var index: Int = ((viewController as! LoginPageViewController)).pageIndex
-        //self.bgImageView.image = UIImage(named: self.pageImageFile[index])
+        self.bgImageView.image = UIImage(named: self.pageImageFile[index])
 
         if index == NSNotFound  {
             return nil
@@ -87,7 +119,7 @@ extension ViewController:UIPageViewControllerDataSource{
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         var index: Int = ((viewController as! LoginPageViewController)).pageIndex
-       // self.bgImageView.image = UIImage(named: self.pageImageFile[index])
+        self.bgImageView.image = UIImage(named: self.pageImageFile[index])
 
         if index == NSNotFound || index == 0 {
             return nil

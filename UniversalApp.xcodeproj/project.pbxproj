@@ -24,6 +24,11 @@
 		120BE3A41CFD606C007A7208 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39C1CFD603F007A7208 /* Roboto-Regular.ttf */; };
 		120BE3A51CFD606C007A7208 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39D1CFD603F007A7208 /* RobotoCondensed-Bold.ttf */; };
 		120BE3A61CFD606C007A7208 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */; };
+		A9B009EB1D02C08300617EF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009EA1D02C08300617EF3 /* LoginViewController.swift */; };
+		A9B009F11D02DB7700617EF3 /* YogaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F01D02DB7700617EF3 /* YogaViewController.swift */; };
+		A9B009F31D02DB8100617EF3 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F21D02DB8100617EF3 /* BlogViewController.swift */; };
+		A9B009F51D02DB9000617EF3 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F41D02DB9000617EF3 /* BookViewController.swift */; };
+		A9B009F71D02DBA600617EF3 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F61D02DBA600617EF3 /* ShareViewController.swift */; };
 		AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */; };
 		AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */; };
 		AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */; };
@@ -71,6 +76,11 @@
 		120BE39D1CFD603F007A7208 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		120BE3A71CFD62F0007A7208 /* UniversalApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UniversalApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9B009EA1D02C08300617EF3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A9B009F01D02DB7700617EF3 /* YogaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YogaViewController.swift; sourceTree = "<group>"; };
+		A9B009F21D02DB8100617EF3 /* BlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		A9B009F41D02DB9000617EF3 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		A9B009F61D02DBA600617EF3 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayoutDSL-Swift.swift"; sourceTree = "<group>"; };
 		AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXConstant.swift; sourceTree = "<group>"; };
 		AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +134,8 @@
 		120BE3611CFD4F7C007A7208 /* UniversalApp */ = {
 			isa = PBXGroup;
 			children = (
+				A9B009EF1D02DAB600617EF3 /* TabBarControllers */,
+				A9B009E91D02C05D00617EF3 /* ViewController */,
 				AA4C56E91CFD7FA200FF3597 /* AutoLayOuts */,
 				120BE3931CFD5F61007A7208 /* assets */,
 				120BE3621CFD4F7C007A7208 /* AppDelegate.swift */,
@@ -180,6 +192,25 @@
 				120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		A9B009E91D02C05D00617EF3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9B009EA1D02C08300617EF3 /* LoginViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A9B009EF1D02DAB600617EF3 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9B009F01D02DB7700617EF3 /* YogaViewController.swift */,
+				A9B009F21D02DB8100617EF3 /* BlogViewController.swift */,
+				A9B009F41D02DB9000617EF3 /* BookViewController.swift */,
+				A9B009F61D02DBA600617EF3 /* ShareViewController.swift */,
+			);
+			name = TabBarControllers;
 			sourceTree = "<group>";
 		};
 		AA4C56E91CFD7FA200FF3597 /* AutoLayOuts */ = {
@@ -338,10 +369,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B009EB1D02C08300617EF3 /* LoginViewController.swift in Sources */,
+				A9B009F71D02DBA600617EF3 /* ShareViewController.swift in Sources */,
 				AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */,
+				A9B009F11D02DB7700617EF3 /* YogaViewController.swift in Sources */,
 				120BE3651CFD4F7C007A7208 /* ViewController.swift in Sources */,
 				AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */,
+				A9B009F31D02DB8100617EF3 /* BlogViewController.swift in Sources */,
 				AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */,
+				A9B009F51D02DB9000617EF3 /* BookViewController.swift in Sources */,
 				120BE3631CFD4F7C007A7208 /* AppDelegate.swift in Sources */,
 				120BE36B1CFD4F7C007A7208 /* UniversalApp.xcdatamodeld in Sources */,
 			);
@@ -489,6 +525,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UniversalApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.storeongo.UniversalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,6 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UniversalApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.storeongo.UniversalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
