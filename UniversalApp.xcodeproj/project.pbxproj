@@ -33,6 +33,9 @@
 		AA11729D1D0808720047FD0C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA11729A1D0808720047FD0C /* FBSDKLoginKit.framework */; };
 		AA11729E1D0808720047FD0C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */; };
 		AA192D731D0825E00053E973 /* YogaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA192D721D0825E00053E973 /* YogaTableViewCell.swift */; };
+		AA192D7D1D0859C90053E973 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA192D7C1D0859C90053E973 /* YTPlayerView.m */; };
+		AA192D7F1D085A5E0053E973 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA192D7E1D085A5E0053E973 /* PlayerViewController.swift */; };
+		AA192D811D08605B0053E973 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA192D801D08605B0053E973 /* Assets.bundle */; };
 		AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */; };
 		AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */; };
 		AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */; };
@@ -89,6 +92,10 @@
 		AA11729A1D0808720047FD0C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		AA192D721D0825E00053E973 /* YogaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YogaTableViewCell.swift; sourceTree = "<group>"; };
+		AA192D7B1D0859C90053E973 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		AA192D7C1D0859C90053E973 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		AA192D7E1D085A5E0053E973 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		AA192D801D08605B0053E973 /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayoutDSL-Swift.swift"; sourceTree = "<group>"; };
 		AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXConstant.swift; sourceTree = "<group>"; };
 		AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +190,7 @@
 		120BE3931CFD5F61007A7208 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				AA192D801D08605B0053E973 /* Assets.bundle */,
 				AA5C6F8E1CFEB2810089790A /* TutorialViewController */,
 				AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */,
 				120BE3961CFD602D007A7208 /* Fonts */,
@@ -217,6 +225,7 @@
 		A9B009EF1D02DAB600617EF3 /* TabBarControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AA192D7A1D0859770053E973 /* Player */,
 				A9B009F01D02DB7700617EF3 /* YogaViewController.swift */,
 				A9B009F21D02DB8100617EF3 /* BlogViewController.swift */,
 				A9B009F41D02DB9000617EF3 /* BookViewController.swift */,
@@ -234,6 +243,16 @@
 				AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */,
 			);
 			name = Facebook;
+			sourceTree = "<group>";
+		};
+		AA192D7A1D0859770053E973 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				AA192D7B1D0859C90053E973 /* YTPlayerView.h */,
+				AA192D7C1D0859C90053E973 /* YTPlayerView.m */,
+				AA192D7E1D085A5E0053E973 /* PlayerViewController.swift */,
+			);
+			name = Player;
 			sourceTree = "<group>";
 		};
 		AA4C56E91CFD7FA200FF3597 /* AutoLayOuts */ = {
@@ -361,6 +380,7 @@
 				120BE3A11CFD606C007A7208 /* Roboto-Italic.ttf in Resources */,
 				120BE3A21CFD606C007A7208 /* Roboto-Light.ttf in Resources */,
 				120BE3A31CFD606C007A7208 /* Roboto-Medium.ttf in Resources */,
+				AA192D811D08605B0053E973 /* Assets.bundle in Resources */,
 				120BE3A41CFD606C007A7208 /* Roboto-Regular.ttf in Resources */,
 				120BE3A51CFD606C007A7208 /* RobotoCondensed-Bold.ttf in Resources */,
 				120BE3A61CFD606C007A7208 /* RobotoCondensed-Light.ttf in Resources */,
@@ -395,8 +415,10 @@
 				A9B009EB1D02C08300617EF3 /* LoginViewController.swift in Sources */,
 				AA192D731D0825E00053E973 /* YogaTableViewCell.swift in Sources */,
 				A9B009F71D02DBA600617EF3 /* ShareViewController.swift in Sources */,
+				AA192D7F1D085A5E0053E973 /* PlayerViewController.swift in Sources */,
 				AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */,
 				A9B009F11D02DB7700617EF3 /* YogaViewController.swift in Sources */,
+				AA192D7D1D0859C90053E973 /* YTPlayerView.m in Sources */,
 				120BE3651CFD4F7C007A7208 /* ViewController.swift in Sources */,
 				AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */,
 				A9B009F31D02DB8100617EF3 /* BlogViewController.swift in Sources */,

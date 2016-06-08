@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol AppDataDelegate {
+    func watchButtonAction(sender: UIButton)
+    
+}
 class YogaTableViewCell: UITableViewCell {
+    var dataDelegate:AppDataDelegate?
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
         self.watchBtn.layer.cornerRadius = 8.0
         self.watchBtn.layer.borderColor = UIColor.blueColor().CGColor
         self.watchBtn.layer.borderWidth = 2.0

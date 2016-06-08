@@ -11,7 +11,8 @@ import UIKit
 class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var yogaTypeName : [String] = ["Nada Yoga","Yoga Namaskar","Nadi Shuddhi"]
-    var yogaVideos : [String] = ["https://www.youtube.com/watch?v=lDZ7RP13B_8"," https://www.youtube.com/watch?v=WALEQp-o0QE","https://www.youtube.com/watch?v=hqdwkIQy4RM"]
+    var yogaVideos : [String] = ["lDZ7RP13B_8","WALEQp-o0QE","hqdwkIQy4RM"]
+    var VideoID:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +34,24 @@ class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(
-                "YogaTableViewCell", forIndexPath: indexPath)
-                as! YogaTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("YogaTableViewCell", forIndexPath: indexPath) as! YogaTableViewCell
         cell.yogaTitleLbl.text = self.yogaTypeName[indexPath.row]
-                return cell
+        cell.watchBtn.tag = indexPath.row+1
+        cell.watchBtn.addTarget(self, action: #selector(YogaViewController.watchButtonTapped(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+
+            return cell
     }
-   
+    func watchButtonTapped(sender:UIButton){
+        //        VideoID = videoIDArray.objectAtIndex(indexPath.row) as! String
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc : PlayerViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PlayerView") as! PlayerViewController
+        VideoID = yogaVideos[sender.tag-1]
+        vc.VideoID = VideoID
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
