@@ -10,6 +10,9 @@ import UIKit
 
 class YogaViewController: UIViewController {
 
+    var yogaTypeName : [String] = ["Nada Yoga","Yoga Namaskar","Nadi Shuddhi"]
+    var yogaVideos : [String] = ["https://www.youtube.com/watch?v=lDZ7RP13B_8"," https://www.youtube.com/watch?v=WALEQp-o0QE","https://www.youtube.com/watch?v=hqdwkIQy4RM"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

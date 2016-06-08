@@ -29,6 +29,9 @@
 		A9B009F31D02DB8100617EF3 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F21D02DB8100617EF3 /* BlogViewController.swift */; };
 		A9B009F51D02DB9000617EF3 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F41D02DB9000617EF3 /* BookViewController.swift */; };
 		A9B009F71D02DBA600617EF3 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F61D02DBA600617EF3 /* ShareViewController.swift */; };
+		AA11729C1D0808720047FD0C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1172991D0808720047FD0C /* FBSDKCoreKit.framework */; };
+		AA11729D1D0808720047FD0C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA11729A1D0808720047FD0C /* FBSDKLoginKit.framework */; };
+		AA11729E1D0808720047FD0C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */; };
 		AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */; };
 		AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */; };
 		AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */; };
@@ -81,6 +84,9 @@
 		A9B009F21D02DB8100617EF3 /* BlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
 		A9B009F41D02DB9000617EF3 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		A9B009F61D02DBA600617EF3 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		AA1172991D0808720047FD0C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		AA11729A1D0808720047FD0C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayoutDSL-Swift.swift"; sourceTree = "<group>"; };
 		AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXConstant.swift; sourceTree = "<group>"; };
 		AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA11729D1D0808720047FD0C /* FBSDKLoginKit.framework in Frameworks */,
+				AA11729C1D0808720047FD0C /* FBSDKCoreKit.framework in Frameworks */,
+				AA11729E1D0808720047FD0C /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +143,7 @@
 		120BE3611CFD4F7C007A7208 /* UniversalApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA1172981D0808400047FD0C /* Facebook */,
 				A9B009EF1D02DAB600617EF3 /* TabBarControllers */,
 				A9B009E91D02C05D00617EF3 /* ViewController */,
 				AA4C56E91CFD7FA200FF3597 /* AutoLayOuts */,
@@ -211,6 +221,16 @@
 				A9B009F61D02DBA600617EF3 /* ShareViewController.swift */,
 			);
 			name = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		AA1172981D0808400047FD0C /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				AA1172991D0808720047FD0C /* FBSDKCoreKit.framework */,
+				AA11729A1D0808720047FD0C /* FBSDKLoginKit.framework */,
+				AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */,
+			);
+			name = Facebook;
 			sourceTree = "<group>";
 		};
 		AA4C56E91CFD7FA200FF3597 /* AutoLayOuts */ = {
@@ -524,10 +544,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UniversalApp",
+				);
 				INFOPLIST_FILE = UniversalApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.storeongo.UniversalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ishafoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UniversalApp/UniversalApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -539,10 +563,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UniversalApp",
+				);
 				INFOPLIST_FILE = UniversalApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.storeongo.UniversalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ishafoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UniversalApp/UniversalApp-Bridging-Header.h";
 			};

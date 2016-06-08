@@ -223,7 +223,7 @@
                                             <constraint firstAttribute="width" constant="70" id="Zay-a5-Lf2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By  Signing up, I agree with the Terms of Service And Privacy Policy." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWL-ud-eSB">
@@ -232,7 +232,7 @@
                                             <constraint firstAttribute="height" constant="42" id="s8n-BH-c3L"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSU-G1-F9V">
@@ -392,6 +392,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="164" y="154" width="153" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="loginWithFaceBook:" destination="cgM-J4-FX7" eventType="touchUpInside" id="57x-ap-nR3"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBn-QZ-xy6">
                                         <rect key="frame" x="119" y="14" width="80" height="21"/>
@@ -468,6 +471,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginWithFacebook" destination="VuO-ye-tfc" id="8Vg-wH-2dy"/>
                         <outlet property="parentView" destination="aNb-AQ-W1W" id="F9Z-Si-vcQ"/>
                     </connections>
                 </viewController>
