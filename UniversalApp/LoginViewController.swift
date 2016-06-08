@@ -81,6 +81,8 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     override func viewWillAppear(animated: Bool) {
         self.parentView.bringSubviewToFront(self.view)
     }
+    
+ 
     /*
     // MARK: - Navigation
 

@@ -32,6 +32,7 @@
 		AA11729C1D0808720047FD0C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1172991D0808720047FD0C /* FBSDKCoreKit.framework */; };
 		AA11729D1D0808720047FD0C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA11729A1D0808720047FD0C /* FBSDKLoginKit.framework */; };
 		AA11729E1D0808720047FD0C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */; };
+		AA192D731D0825E00053E973 /* YogaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA192D721D0825E00053E973 /* YogaTableViewCell.swift */; };
 		AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */; };
 		AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */; };
 		AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */; };
@@ -87,6 +88,7 @@
 		AA1172991D0808720047FD0C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		AA11729A1D0808720047FD0C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AA11729B1D0808720047FD0C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		AA192D721D0825E00053E973 /* YogaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YogaTableViewCell.swift; sourceTree = "<group>"; };
 		AA4C56EA1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayoutDSL-Swift.swift"; sourceTree = "<group>"; };
 		AA4C56EC1CFD811E00FF3597 /* CXConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXConstant.swift; sourceTree = "<group>"; };
 		AA5C6F911CFEBFA90089790A /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				A9B009F21D02DB8100617EF3 /* BlogViewController.swift */,
 				A9B009F41D02DB9000617EF3 /* BookViewController.swift */,
 				A9B009F61D02DBA600617EF3 /* ShareViewController.swift */,
+				AA192D721D0825E00053E973 /* YogaTableViewCell.swift */,
 			);
 			name = TabBarControllers;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B009EB1D02C08300617EF3 /* LoginViewController.swift in Sources */,
+				AA192D731D0825E00053E973 /* YogaTableViewCell.swift in Sources */,
 				A9B009F71D02DBA600617EF3 /* ShareViewController.swift in Sources */,
 				AA4C56EB1CFD7FB300FF3597 /* AutoLayoutDSL-Swift.swift in Sources */,
 				A9B009F11D02DB7700617EF3 /* YogaViewController.swift in Sources */,

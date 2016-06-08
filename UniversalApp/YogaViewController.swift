@@ -8,14 +8,14 @@
 
 import UIKit
 
-class YogaViewController: UIViewController {
+class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var yogaTypeName : [String] = ["Nada Yoga","Yoga Namaskar","Nadi Shuddhi"]
     var yogaVideos : [String] = ["https://www.youtube.com/watch?v=lDZ7RP13B_8"," https://www.youtube.com/watch?v=WALEQp-o0QE","https://www.youtube.com/watch?v=hqdwkIQy4RM"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.navigationController?.navigationBarHidden  = false
         // Do any additional setup after loading the view.
     }
 
@@ -24,7 +24,22 @@ class YogaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return yogaTypeName.count
+    }
+  
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+                "YogaTableViewCell", forIndexPath: indexPath)
+                as! YogaTableViewCell
+        cell.yogaTitleLbl.text = self.yogaTypeName[indexPath.row]
+                return cell
+    }
+   
     /*
     // MARK: - Navigation
 
