@@ -17,6 +17,7 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
        // loginWithFacebook.delegate = self
        // loginWithFacebook.readPermissions = ["public_profile", "email", "user_friends"];
         // Do any additional setup after loading the view.
