@@ -13,7 +13,9 @@ class BookViewController: UIViewController {
     @IBOutlet weak var bookPageView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let keepShoppingBtnColor : UIColor = UIColor(red: 16.0/255.0, green: 57.0/255.0, blue: 94.0/255.0, alpha: 1.0)
         
+        self.navigationController!.navigationBar.barTintColor = keepShoppingBtnColor
         if let pdf = NSBundle.mainBundle().URLForResource("FoodBody_final", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let req = NSURLRequest(URL: pdf)
             self.bookPageView.loadRequest(req)

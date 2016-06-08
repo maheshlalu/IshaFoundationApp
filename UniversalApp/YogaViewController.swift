@@ -11,11 +11,17 @@ import UIKit
 class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var yogaTypeName : [String] = ["Nada Yoga","Yoga Namaskar","Nadi Shuddhi"]
+    var yogaTypeImages : [String] = ["Nada-Yoga","Yoga-Namaskar","Nada-Shuddi"]
+
     var yogaVideos : [String] = ["lDZ7RP13B_8","WALEQp-o0QE","hqdwkIQy4RM"]
     var VideoID:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let keepShoppingBtnColor : UIColor = UIColor(red: 16.0/255.0, green: 57.0/255.0, blue: 94.0/255.0, alpha: 1.0)
+
+        self.navigationController!.navigationBar.barTintColor = keepShoppingBtnColor
         //self.navigationController?.navigationBarHidden  = false
         // Do any additional setup after loading the view.
     }
@@ -37,6 +43,7 @@ class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCellWithIdentifier("YogaTableViewCell", forIndexPath: indexPath) as! YogaTableViewCell
         cell.yogaTitleLbl.text = self.yogaTypeName[indexPath.row]
         cell.watchBtn.tag = indexPath.row+1
+        cell.yogaIconImageView.image = UIImage.init(named: yogaTypeImages[indexPath.row])
         cell.watchBtn.addTarget(self, action: #selector(YogaViewController.watchButtonTapped(_:)), forControlEvents: UIControlEvents.TouchUpInside)
 
             return cell

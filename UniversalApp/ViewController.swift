@@ -35,6 +35,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         self.bgImageView.image = UIImage(named: self.pageImageFile[0])
         self.setUpPageController()
+        self.navigationController?.navigationBarHidden = true
 
         //self.view.backgroundColor = UIColor.blackColor()
 
@@ -58,7 +59,6 @@ class ViewController: UIViewController{
         self.addChildViewController(self.pageControl)
         self.view.addSubview(self.pageControl.view)
         self.pageControl.didMoveToParentViewController(self)
-        self.pageControl.view.layer.borderWidth = 1
         
         self.pageControl.view.frame = CGRectMake(0, 0, self.view.frame.size.width, screenHt - self.bottomBgView.frame.size.height)
         
@@ -93,7 +93,7 @@ class ViewController: UIViewController{
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewID") as! LoginViewController
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("SignUpID") as! SignUpViewController
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 

@@ -24,6 +24,7 @@
 		120BE3A41CFD606C007A7208 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39C1CFD603F007A7208 /* Roboto-Regular.ttf */; };
 		120BE3A51CFD606C007A7208 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39D1CFD603F007A7208 /* RobotoCondensed-Bold.ttf */; };
 		120BE3A61CFD606C007A7208 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */; };
+		12A2C3C71D0891590060D88D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A2C3C61D0891590060D88D /* SignUpViewController.swift */; };
 		A9B009EB1D02C08300617EF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009EA1D02C08300617EF3 /* LoginViewController.swift */; };
 		A9B009F11D02DB7700617EF3 /* YogaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F01D02DB7700617EF3 /* YogaViewController.swift */; };
 		A9B009F31D02DB8100617EF3 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B009F21D02DB8100617EF3 /* BlogViewController.swift */; };
@@ -83,6 +84,7 @@
 		120BE39D1CFD603F007A7208 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		120BE39E1CFD603F007A7208 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		120BE3A71CFD62F0007A7208 /* UniversalApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UniversalApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		12A2C3C61D0891590060D88D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A9B009EA1D02C08300617EF3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9B009F01D02DB7700617EF3 /* YogaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YogaViewController.swift; sourceTree = "<group>"; };
 		A9B009F21D02DB8100617EF3 /* BlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				A9B009EA1D02C08300617EF3 /* LoginViewController.swift */,
+				12A2C3C61D0891590060D88D /* SignUpViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				AA192D7D1D0859C90053E973 /* YTPlayerView.m in Sources */,
 				120BE3651CFD4F7C007A7208 /* ViewController.swift in Sources */,
 				AA4C56ED1CFD811E00FF3597 /* CXConstant.swift in Sources */,
+				12A2C3C71D0891590060D88D /* SignUpViewController.swift in Sources */,
 				A9B009F31D02DB8100617EF3 /* BlogViewController.swift in Sources */,
 				AA5C6F921CFEBFA90089790A /* LoginPageViewController.swift in Sources */,
 				A9B009F51D02DB9000617EF3 /* BookViewController.swift in Sources */,

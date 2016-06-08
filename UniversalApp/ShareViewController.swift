@@ -12,7 +12,9 @@ class ShareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let keepShoppingBtnColor : UIColor = UIColor(red: 16.0/255.0, green: 57.0/255.0, blue: 94.0/255.0, alpha: 1.0)
+        
+        self.navigationController!.navigationBar.barTintColor = keepShoppingBtnColor
         // Do any additional setup after loading the view.
     }
 
