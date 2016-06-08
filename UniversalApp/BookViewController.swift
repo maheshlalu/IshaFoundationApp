@@ -10,11 +10,18 @@ import UIKit
 
 class BookViewController: UIViewController {
 
+    @IBOutlet weak var bookPageView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let pdf = NSBundle.mainBundle().URLForResource("FoodBody_final", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+            let req = NSURLRequest(URL: pdf)
+            self.bookPageView.loadRequest(req)
+        }
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet var bookWebView: UIView!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
