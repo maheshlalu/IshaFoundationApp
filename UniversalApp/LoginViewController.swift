@@ -35,8 +35,8 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         
     }
     @IBAction func loginWithFaceBook(sender: UIButton) {
-        
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.loginBehavior = FBSDKLoginBehavior.Web
         fbLoginManager.logInWithReadPermissions(["public_profile", "email", "user_friends"], fromViewController: self) { (result, error) -> Void in
             if (error == nil){
                 let fbloginresult : FBSDKLoginManagerLoginResult = result
@@ -54,6 +54,21 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if (error == nil){
                     print(result)
+                    /*
+                     {
+                     email = "yernagulamahesh@gmail.com";
+                     "first_name" = Mahesh;
+                     id = 953992734697907;
+                     "last_name" = Yernagula;
+                     name = "Mahesh Yernagula";
+                     picture =     {
+                     data =         {
+                     "is_silhouette" = 0;
+                     url = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpt1/v/t1.0-1/p200x200/12141625_831479470282568_6545670520184818024_n.jpg?oh=74d5340e4d1a7eb8c7db7898cd72914a&oe=57D539C4&__gda__=1472797113_147f6b673b7739e42c8f31b3e3c9f0b8";
+                     };
+                     };
+                     }
+                     */
                 }
             })
         }
@@ -104,5 +119,18 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        if (toInterfaceOrientation.isLandscape) {
+            NSLog("Landscape");
+            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login2")!)
+
+        }
+        else {
+            NSLog("Portrait");
+            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
+
+        }
+    }
 
 }
