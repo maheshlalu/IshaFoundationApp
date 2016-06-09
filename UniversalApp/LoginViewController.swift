@@ -39,8 +39,13 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         fbLoginManager.loginBehavior = FBSDKLoginBehavior.Web
         fbLoginManager.logInWithReadPermissions(["public_profile", "email", "user_friends"], fromViewController: self) { (result, error) -> Void in
             if (error == nil){
+                 if result.isCancelled {
+                    print("Canceled")
+                    return
+                }
                 let fbloginresult : FBSDKLoginManagerLoginResult = result
-                if(fbloginresult.grantedPermissions.contains("email"))
+                let value = fbloginresult.grantedPermissions.contains("email")
+                if(value)
                 {
                     self.getFBUserData()
                 }
