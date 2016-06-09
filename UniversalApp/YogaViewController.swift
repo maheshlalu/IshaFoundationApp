@@ -16,6 +16,9 @@ class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var yogaVideos : [String] = ["lDZ7RP13B_8","WALEQp-o0QE","hqdwkIQy4RM"]
     var VideoID:String!
 
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var imageStackView: UIStackView!
+    @IBOutlet weak var tableStackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -31,11 +31,18 @@ class ViewController: UIViewController{
         
         
     }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bgImageView.image = UIImage(named: self.pageImageFile[0])
         self.setUpPageController()
         self.navigationController?.navigationBarHidden = true
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
 
         //self.view.backgroundColor = UIColor.blackColor()
 

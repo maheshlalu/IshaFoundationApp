@@ -17,12 +17,23 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login2")!)
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
        // loginWithFacebook.delegate = self
        // loginWithFacebook.readPermissions = ["public_profile", "email", "user_friends"];
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func cancelButtonAction(sender: AnyObject) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+    }
     @IBAction func loginWithFaceBook(sender: UIButton) {
         
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()

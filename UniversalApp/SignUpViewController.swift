@@ -12,7 +12,8 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
+self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +23,15 @@ class SignUpViewController: UIViewController {
     }
     
 
+    @IBAction func cancelButtonAction(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+    }
     /*
     // MARK: - Navigation
 
