@@ -98,7 +98,7 @@ class ViewController: UIViewController{
     @IBAction func SignUpButtonAction(sender: AnyObject) {
         //TabBarID
         
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
         
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("SignUpID") as! SignUpViewController
         self.navigationController?.pushViewController(nextViewController, animated: true)

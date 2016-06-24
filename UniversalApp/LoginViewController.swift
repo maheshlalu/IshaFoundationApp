@@ -34,6 +34,13 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
     }
+    
+    /*
+     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
+     
+     let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("SignUpID") as! SignUpViewController
+     self.navigationController?.pushViewController(nextViewController, animated: true)
+     */
     @IBAction func loginWithFaceBook(sender: UIButton) {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.loginBehavior = FBSDKLoginBehavior.Web
@@ -59,6 +66,11 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if (error == nil){
                     print(result)
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
+                    
+                    let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
+                    self.navigationController?.pushViewController(nextViewController, animated: true)
                     /*
                      {
                      email = "yernagulamahesh@gmail.com";
@@ -138,4 +150,11 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         }
     }
 
+    @IBAction func loginButtonAction(sender: AnyObject) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
 }

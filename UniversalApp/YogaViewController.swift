@@ -10,21 +10,24 @@ import UIKit
 
 class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    var yogaTypeName : [String] = ["Nada Yoga","Yoga Namaskar","Nadi Shuddhi"]
-    var yogaTypeImages : [String] = ["Nada-Yoga","Yoga-Namaskar","Nada-Shuddi"]
+    var yogaTypeName : [String] = ["Nada Yoga","Yoga Namaskar","Nadi Shuddhi","Yoga for Health","Yoga for Joy","Yoga for Love","Yoga for Peace","Yoga for Success","Yoga for Wellbeing"]
+    var yogaTypeImages : [String] = ["Nada-Yoga","Yoga-Namaskar","Nada-Shuddi","Nada-Yoga","Yoga-Namaskar","Nada-Shuddi","Nada-Yoga","Yoga-Namaskar","Nada-Shuddi"]
 
-    var yogaVideos : [String] = ["lDZ7RP13B_8","WALEQp-o0QE","hqdwkIQy4RM"]
+    var yogaVideos : [String] = ["lDZ7RP13B_8","WALEQp-o0QE","hqdwkIQy4RM","BGVvLoyalm0","CCPLrqDiokU","Ks2bQCqNROg","dd7QelgqtRc","gmQnnZLZ4Rw","1I0w6jcmu5Y"]
     var VideoID:String!
 
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var imageStackView: UIStackView!
     @IBOutlet weak var tableStackView: UIStackView!
+    @IBOutlet var yogaTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let keepShoppingBtnColor : UIColor = UIColor(red: 16.0/255.0, green: 57.0/255.0, blue: 94.0/255.0, alpha: 1.0)
 
         self.navigationController!.navigationBar.barTintColor = keepShoppingBtnColor
+        self.yogaTableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
+
         //self.navigationController?.navigationBarHidden  = false
         // Do any additional setup after loading the view.
     }
