@@ -66,11 +66,11 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if (error == nil){
                     print(result)
-                    
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
                     
                     let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
                     self.navigationController?.pushViewController(nextViewController, animated: true)
+                    Services.sharedInstance().postmethod(result.valueForKey("name") as? String, email: result.valueForKey("email") as? String)
                     /*
                      {
                      email = "yernagulamahesh@gmail.com";

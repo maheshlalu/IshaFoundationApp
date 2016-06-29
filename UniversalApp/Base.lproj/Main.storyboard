@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.077260194630000001" green="0.40045205309999998" blue="0.78084096859999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Share" image="share" id="S2z-dy-pQu"/>
+                    <tabBarItem key="tabBarItem" title="Share" image="share" selectedImage="share_active" id="S2z-dy-pQu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vb0-Hn-ELz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,6 +344,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="goToLoginView:" destination="Tkg-du-SRi" eventType="touchUpInside" id="jWX-Zz-CTa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNz-CV-Fjf">
                                         <rect key="frame" x="5" y="219" width="132" height="30"/>
@@ -559,7 +562,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPb-2i-6nF">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPb-2i-6nF">
                                         <rect key="frame" x="225" y="40" width="65" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1lp-gh-Z4c"/>
@@ -754,7 +757,10 @@
         <scene sceneID="kEf-ac-9Wf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jUQ-ev-TRI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Yoga" image="yoga" id="h7C-Ei-zZc"/>
+                    <tabBarItem key="tabBarItem" title="Yoga" image="yoga" selectedImage="yoha_active" id="h7C-Ei-zZc">
+                        <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oPW-aE-bsf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -778,7 +784,7 @@
         <scene sceneID="Re0-y4-PgP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ceC-0d-mlz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Book" image="book" id="jJu-w7-mUN"/>
+                    <tabBarItem key="tabBarItem" title="Book" image="book" selectedImage="book_active" id="jJu-w7-mUN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNg-JN-AQt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -801,7 +807,9 @@
         <scene sceneID="bf0-lA-8z1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uXe-m1-jSa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Blog" image="blog" id="j9g-NK-Aes"/>
+                    <tabBarItem key="tabBarItem" title="Blog" image="blog" selectedImage="blog_active" id="j9g-NK-Aes">
+                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aFk-H0-IoC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -858,12 +866,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blog" width="300" height="400"/>
-        <image name="book" width="128" height="128"/>
+        <image name="blog" width="40" height="40"/>
+        <image name="blog_active" width="40" height="40"/>
+        <image name="book" width="40" height="40"/>
+        <image name="book_active" width="40" height="40"/>
         <image name="cancel" width="50" height="50"/>
         <image name="login1" width="375" height="667"/>
-        <image name="share" width="128" height="128"/>
-        <image name="yoga" width="128" height="128"/>
+        <image name="share" width="40" height="40"/>
+        <image name="share_active" width="40" height="40"/>
+        <image name="yoga" width="40" height="40"/>
+        <image name="yoha_active" width="40" height="40"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

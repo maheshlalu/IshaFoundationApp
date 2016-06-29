@@ -14,20 +14,13 @@ import FBSDKShareKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
-        Services.sharedInstance().postmethod("mahesh", email: "ewoi@gmail.com")
-
+       // Services.sharedInstance().postmethod("mahesh", email: "ewoi@gmail.com")
         return true
-    }
-    
-   
+    }   
 
 
     func applicationWillResignActive(application: UIApplication) {

@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
-self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +23,13 @@ self.navigationController?.navigationBarHidden = true
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goToLoginView(sender: AnyObject) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LoginViewID") as! LoginViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
     @IBAction func facebookButtonAction(sender: AnyObject) {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.loginBehavior = FBSDKLoginBehavior.Web
@@ -50,7 +57,7 @@ self.navigationController?.navigationBarHidden = true
                     print(result)
                     
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
-                    
+                    Services.sharedInstance().postmethod(result.valueForKey("name") as? String, email: result.valueForKey("email") as? String)
                     let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
                     self.navigationController?.pushViewController(nextViewController, animated: true)
                     /*
@@ -86,9 +93,7 @@ self.navigationController?.navigationBarHidden = true
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-        
     }
     
     /*
