@@ -17,7 +17,7 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_LMain")!)
        // loginWithFacebook.delegate = self
        // loginWithFacebook.readPermissions = ["public_profile", "email", "user_friends"];
         // Do any additional setup after loading the view.
@@ -140,12 +140,12 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         if (toInterfaceOrientation.isLandscape) {
             NSLog("Landscape");
-            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login2")!)
+            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_LMain")!)
 
         }
         else {
             NSLog("Portrait");
-            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
+            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_PMain")!)
 
         }
     }

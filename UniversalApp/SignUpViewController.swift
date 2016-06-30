@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "login1")!)
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_LMain")!)
         self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
     }

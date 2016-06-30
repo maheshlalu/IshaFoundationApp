@@ -106,6 +106,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
+      "filename" : "1024x748.png",
       "extent" : "to-status-bar",
       "scale" : "1x"
     },
@@ -118,6 +119,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
+      "filename" : "1536x2008.png",
       "extent" : "to-status-bar",
       "scale" : "2x"
     },
@@ -130,6 +132,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
+      "filename" : "2048x1496.png",
       "extent" : "to-status-bar",
       "scale" : "2x"
     },

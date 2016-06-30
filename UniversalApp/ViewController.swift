@@ -19,7 +19,10 @@ class ViewController: UIViewController{
     let loginBtn : UIButton = UIButton()
     let signUpBtn : UIButton = UIButton()
     
-    let pageImageFile : [String] = ["login1","login2","login1"]
+    let pageImageFile : [String] = ["page1","page2","page3"]//iphone_l1
+    let iphone_landScape : [String] = ["iphone_l1","iphone_l2","iphone_l3"]
+    let pageViewImages : NSMutableArray = NSMutableArray()
+    
 
      var pageControl: UIPageViewController = UIPageViewController()
     
@@ -40,6 +43,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bgImageView.image = UIImage(named: self.pageImageFile[0])
+        self.pageViewImages.addObjectsFromArray(self.pageImageFile)
         self.setUpPageController()
         self.navigationController?.navigationBarHidden = true
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
@@ -103,6 +107,26 @@ class ViewController: UIViewController{
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("SignUpID") as! SignUpViewController
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        if (toInterfaceOrientation.isLandscape) {
+            NSLog("Landscape");
+            self.pageViewImages.removeAllObjects()
+            self.pageViewImages.addObjectsFromArray(self.iphone_landScape)
+            self.bgImageView.image = UIImage(named: self.pageViewImages[0] as! String)
+            self.viewControllerAtIndex(0)
+            
+        }
+        else {
+            NSLog("Portrait");
+            self.pageViewImages.removeAllObjects()
+
+            self.pageViewImages.addObjectsFromArray(self.pageImageFile)
+            self.bgImageView.image = UIImage(named: self.pageViewImages[0] as! String)
+            self.viewControllerAtIndex(0)
+            
+        }
+    }
 
 }
 
@@ -111,13 +135,13 @@ extension ViewController:UIPageViewControllerDataSource{
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
         var index: Int = ((viewController as! LoginPageViewController)).pageIndex
-        self.bgImageView.image = UIImage(named: self.pageImageFile[index])
+        self.bgImageView.image = UIImage(named: self.pageViewImages[index] as! String)
 
         if index == NSNotFound  {
             return nil
         }
         index += 1
-        if index == self.pageImageFile.count {
+        if index == self.pageViewImages.count {
             return nil
         }
         return self.viewControllerAtIndex(index)
@@ -126,20 +150,20 @@ extension ViewController:UIPageViewControllerDataSource{
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         var index: Int = ((viewController as! LoginPageViewController)).pageIndex
-        self.bgImageView.image = UIImage(named: self.pageImageFile[index])
+        self.bgImageView.image = UIImage(named: self.pageViewImages[index] as! String)
 
         if index == NSNotFound || index == 0 {
             return nil
         }
         index -= 1
-        if index == self.pageImageFile.count {
+        if index == self.pageViewImages.count {
             return nil
         }
         return self.viewControllerAtIndex(index)
     }
     
     func viewControllerAtIndex(index: Int) -> LoginPageViewController {
-        if (self.pageImageFile.count == 0) || (index >= self.pageImageFile.count) {
+        if (self.pageViewImages.count == 0) || (index >= self.pageViewImages.count) {
             let tvc: LoginPageViewController? = nil
             return tvc!
         }
