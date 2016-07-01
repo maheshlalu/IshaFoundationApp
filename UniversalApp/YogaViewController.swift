@@ -97,6 +97,11 @@ extension YogaViewController : UITabBarControllerDelegate{
             //Create and add a second option action
             // let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .Default) { action -> Void in
             //Code for picking from camera roll goes here
+            
+            actionSheetController.popoverPresentationController?.sourceView = self.view
+            actionSheetController.popoverPresentationController?.sourceRect = self.view.bounds
+            // this is the center of the screen currently but it can be any point in the view
+            
             self.presentViewController(actionSheetController, animated: true, completion: nil)
             return false
         }
