@@ -140,12 +140,12 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         if (toInterfaceOrientation.isLandscape) {
             NSLog("Landscape");
-            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_LMain")!)
+            //self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_LMain")!)
 
         }
         else {
             NSLog("Portrait");
-            self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_PMain")!)
+            //self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_PMain")!)
 
         }
     }
