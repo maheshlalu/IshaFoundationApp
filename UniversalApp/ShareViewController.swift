@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ShareViewController: UITabBarController, UITabBarControllerDelegate {
+class ShareViewController: UIViewController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.purpleColor()
         let keepShoppingBtnColor : UIColor = UIColor(red: 16.0/255.0, green: 57.0/255.0, blue: 94.0/255.0, alpha: 1.0)
-        
         self.navigationController!.navigationBar.barTintColor = keepShoppingBtnColor
         // Do any additional setup after loading the view.
     }
@@ -23,14 +23,7 @@ class ShareViewController: UITabBarController, UITabBarControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        if viewController.title == "Share" {
-            //do your custom actions
-            return false
-        }
-        return true
-    }
-    
+
 
     /*
     // MARK: - Navigation

@@ -27,7 +27,7 @@ class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
         self.navigationController!.navigationBar.barTintColor = keepShoppingBtnColor
         self.yogaTableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
-
+        self.tabBarController?.delegate = self
         //self.navigationController?.navigationBarHidden  = false
         // Do any additional setup after loading the view.
     }
@@ -75,4 +75,41 @@ class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     */
 
+}
+
+extension YogaViewController : UITabBarControllerDelegate{
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        if viewController.title == "Share" {
+            //do your custom actions
+            let actionSheetController: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet)
+            
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+                //Just dismiss the action sheet
+            }
+            actionSheetController.addAction(cancelAction)
+            //Create and add first option action
+            let takePictureAction: UIAlertAction = UIAlertAction(title: "Share", style: .Default) { action -> Void in
+                //Code for launching the camera goes here
+            }
+            actionSheetController.addAction(takePictureAction)
+            //Create and add a second option action
+            // let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .Default) { action -> Void in
+            //Code for picking from camera roll goes here
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+            return false
+        }
+        //  actionSheetController.addAction(choosePictureAction)
+        
+        //Present the AlertController
+        
+        return true
+    }
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController)
+    {
+        //tabBarController.selectedIndex = 1;
+        
+    }
+    
 }
