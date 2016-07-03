@@ -162,6 +162,8 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
             let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
             self.navigationController?.pushViewController(nextViewController, animated: true)
+            NSUserDefaults.standardUserDefaults().setObject("12345", forKey: "USER_ID")
+
         }else{
             
             let actionSheetController: UIAlertController = UIAlertController(title: "Error", message: "Please enter required fields", preferredStyle: .Alert)

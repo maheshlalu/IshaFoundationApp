@@ -48,30 +48,10 @@
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         NSLog(@"requestReply: %@", requestReply);
+
     }] resume];
     
-    
-    NSOperationQueue *myQuee = [[NSOperationQueue alloc]init];
-    [myQuee addOperationWithBlock:^{
-        
-        //Back ground work
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            //Main Theard Work
-            
-        }];
-    }];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        //Background
-       
-        dispatch_async(dispatch_get_main_queue(), ^{
-           
-            //Main Thread
-            
-            
-        });
-        
-    });
+
     
     
 }
