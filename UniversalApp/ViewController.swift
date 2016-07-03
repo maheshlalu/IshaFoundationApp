@@ -48,10 +48,26 @@ class ViewController: UIViewController{
         self.navigationController?.navigationBarHidden = true
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
 
+        self.buttonBackGroundColor()
+        
+        
         //self.view.backgroundColor = UIColor.blackColor()
 
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func buttonBackGroundColor(){
+        
+        let borderAlpha : CGFloat = 0.7
+        let cornerRadius : CGFloat = 5.0
+        self.signUpBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.signUpBtn.backgroundColor = UIColor.clearColor()
+        self.signUpBtn.layer.borderWidth = 1.0
+        self.signUpBtn.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).CGColor
+        self.signUpBtn.layer.cornerRadius = cornerRadius
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -189,4 +205,16 @@ extension ViewController:UIPageViewControllerDataSource{
     
 }
 
+/*
+ let borderAlpha : CGFloat = 0.7
+ let cornerRadius : CGFloat = 5.0
+ 
+ button.frame = CGRectMake(100, 100, 200, 40)
+ button.setTitle("Get Started", forState: UIControlState.Normal)
+ button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+ button.backgroundColor = UIColor.clearColor()
+ button.layer.borderWidth = 1.0
+ button.layer.borderColor = UIColor(white: 1.0, alpha: borderAlpha).CGColor
+ button.layer.cornerRadius = cornerRadius
+ */
 

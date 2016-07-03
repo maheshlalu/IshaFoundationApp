@@ -11,11 +11,14 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
 
+    @IBOutlet var emailTxt: UITextField!
     @IBOutlet var parentView: UIView!
     @IBOutlet var backGroundBgView: UIImageView!
+    @IBOutlet var passWordTxt: UITextField!
     @IBOutlet weak var loginWithFacebook: FBSDKLoginButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+
     
         self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_LMain")!)
        // loginWithFacebook.delegate = self
@@ -152,9 +155,33 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
 
     @IBAction func loginButtonAction(sender: AnyObject) {
         
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
         
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+        if self.emailTxt.text  != "" || self.passWordTxt.text != ""
+        {
+             Services.sharedInstance().postmethod(self.emailTxt.text, email: self.emailTxt.text)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
+            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+        }else{
+            
+            let actionSheetController: UIAlertController = UIAlertController(title: "Error", message: "Please enter required fields", preferredStyle: .Alert)
+            
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .Cancel) { action -> Void in
+                //Just dismiss the action sheet
+            }
+            actionSheetController.addAction(cancelAction)
+            // let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .Default) { action -> Void in
+            //Code for picking from camera roll goes here
+            
+            actionSheetController.popoverPresentationController?.sourceView = self.view
+            actionSheetController.popoverPresentationController?.sourceRect = self.view.bounds
+            // this is the center of the screen currently but it can be any point in the view
+            
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+            
+        }
+        
+
     }
 }

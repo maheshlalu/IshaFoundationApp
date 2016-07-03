@@ -11,6 +11,8 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 class SignUpViewController: UIViewController {
 
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passWordTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "iphone_LMain")!)
@@ -85,11 +87,34 @@ class SignUpViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     @IBAction func signUpButtonAction(sender: AnyObject) {
+ 
+        if self.emailText.text  != "" || self.passWordTxt.text != ""
+        {
+            Services.sharedInstance().postmethod(self.emailText.text, email: self.emailText.text)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
+            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+        }else{
+            
+            let actionSheetController: UIAlertController = UIAlertController(title: "Error", message: "Please enter required fields", preferredStyle: .Alert)
+            
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .Cancel) { action -> Void in
+                //Just dismiss the action sheet
+            }
+            actionSheetController.addAction(cancelAction)
+            // let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .Default) { action -> Void in
+            //Code for picking from camera roll goes here
+            
+            actionSheetController.popoverPresentationController?.sourceView = self.view
+            actionSheetController.popoverPresentationController?.sourceRect = self.view.bounds
+            // this is the center of the screen currently but it can be any point in the view
+            
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+            
+        }
+
         
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)//TabBarID
-        
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TabBarID") as! UITabBarController
-        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)

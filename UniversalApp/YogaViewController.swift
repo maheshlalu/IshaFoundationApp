@@ -24,9 +24,10 @@ class YogaViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         
         let keepShoppingBtnColor : UIColor = UIColor(red: 16.0/255.0, green: 57.0/255.0, blue: 94.0/255.0, alpha: 1.0)
-
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController!.navigationBar.barTintColor = keepShoppingBtnColor
         self.yogaTableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
+        self.view.backgroundColor = UIColor.clearColor()
         self.tabBarController?.delegate = self
         //self.navigationController?.navigationBarHidden  = false
         // Do any additional setup after loading the view.
@@ -92,6 +93,19 @@ extension YogaViewController : UITabBarControllerDelegate{
             //Create and add first option action
             let takePictureAction: UIAlertAction = UIAlertAction(title: "Share", style: .Default) { action -> Void in
                 //Code for launching the camera goes here
+                let textToShare = "ishaApp blog"
+                
+                if let myWebsite = NSURL(string: "https://www.innerengineering.com/online/blog/") {
+                    let objectsToShare = [textToShare, myWebsite]
+                    let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                    
+                    //New Excluded Activities Code
+                    activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+                    //
+                    
+                    activityVC.popoverPresentationController?.sourceView = self.view
+                    self.presentViewController(activityVC, animated: true, completion: nil)
+                }
             }
             actionSheetController.addAction(takePictureAction)
             //Create and add a second option action
@@ -99,7 +113,7 @@ extension YogaViewController : UITabBarControllerDelegate{
             //Code for picking from camera roll goes here
             
             actionSheetController.popoverPresentationController?.sourceView = self.view
-            actionSheetController.popoverPresentationController?.sourceRect = self.view.bounds
+            actionSheetController.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.size.height-10, self.view.bounds.size.width, self.view.bounds.size.height)
             // this is the center of the screen currently but it can be any point in the view
             
             self.presentViewController(actionSheetController, animated: true, completion: nil)

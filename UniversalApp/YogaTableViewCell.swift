@@ -20,8 +20,9 @@ class YogaTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         self.watchBtn.layer.cornerRadius = 8.0
-        self.watchBtn.layer.borderColor = UIColor.blueColor().CGColor
+        self.watchBtn.layer.borderColor = UIColor(red: 16.0/255.0, green: 57.0/255.0, blue: 94.0/255.0, alpha: 1.0).CGColor
         self.watchBtn.layer.borderWidth = 2.0
+        self.watchBtn.layer.masksToBounds = true
         // Initialization code
     }
     @IBOutlet weak var yogaIconImageView: UIImageView!
